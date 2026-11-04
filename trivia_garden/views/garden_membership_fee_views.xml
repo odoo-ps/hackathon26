@@ -8,4 +8,69 @@
       (method action_mark_paid) only visible on draft fees;
     * an action opening the fees, and a menu "Membership Fees" (in views/menus.xml).
     -->
+    
+    <record id="garden_membership_fee_view_search" model="ir.ui.view">
+      <field name="name">garden.membership.fee.search</field>
+      <field name="model">garden.membership.fee</field>
+      <field name="type">search</field>
+      <field name="arch" type="xml">
+        <search string="Membership Fees">
+            <field name="partner_id" string="Member"/>
+        </search>
+      </field>
+    </record>
+    
+    <record id="garden_membership_fee_view_list" model="ir.ui.view">
+      <field name="name">garden.membership.fee.list</field>
+      <field name="model">garden.membership.fee</field>
+      <field name="type">list</field>
+      <field name="arch" type="xml">
+        <list string="Membership Fees">
+          <field name="partner_id"/>
+          <field name="year"/>
+          <field name="amount"/>
+          <field name="payment_date"/>
+        </list>
+      </field>
+    </record>
+
+    <record id="garden_membership_fee_view_form" model="ir.ui.view">
+      <field name="name">garden.membership.fee.form</field>
+      <field name="model">garden.membership.fee</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="Membership Fee">
+          <header>
+            <button type="object" name="action_mark_paid" invisible="state != 'draft'" string="Mark as paid"/>
+            <field name="state" widget="statusbar"/>
+          </header>
+          <sheet>
+            <group>
+              <group>
+                <field name="partner_id"/>
+                <field name="year"/>
+                <field name="amount"/>
+                <field name="payment_date"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="garden_membership_fee_action" model="ir.actions.act_window">
+        <field name="name">Membership Feeds</field>
+        <field name="res_model">garden.membership.fee</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="garden_membership_fee_view_list"/>
+        <field name="search_view_id" ref="garden_membership_fee_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_neutral_face">
+                Track your membership feeds.
+            </p>
+        </field>
+    </record>
+
+    
+
 </odoo>

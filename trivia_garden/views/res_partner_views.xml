@@ -10,4 +10,51 @@
 
     ⭐ BONUS: a "Fees" smart button on the contact form, showing the number of fees of the member.
     -->
+    
+    <record id="res_partner_membership_fees" model="ir.ui.view">
+      <field name="name">res.partner.membership.fees</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//notebook" position="inside">
+          <page string="Membership">
+            <group>
+              <field name="membership_type"/>
+              <field name="member_since"/>
+              <field name="last_paid_year"/>
+            </group>
+            <separator string="Fees"/>
+            <field name="fee_ids">
+              <list string="Fees">
+                  <field name="year"/>
+                  <field name="amount"/>
+                  <field name="payment_date"/>
+              </list>
+            </field>
+          </page>
+        </xpath>
+        <div name="button_box" position="inside">
+            <button class="oe_stat_button" name="action_open_membership_fees" type="object" icon="menu">
+                <div class="o_stat_info">
+                    <span class="o_stat_text">
+                        Membership Fees
+                    </span>
+                </div>
+            </button>
+        </div>
+      </field>
+    </record>
+    
+    <record id="res_partner_membership_fees_search" model="ir.ui.view">
+      <field name="name">res.partner.search.membership.fees</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_res_partner_filter"/>
+      <field name="arch" type="xml">
+        <xpath expr="//group" position="before">
+          <separator/>
+          <filter name="Not up to date" domain="[('last_paid_year', '&lt;', datetime.datetime.now().strftime('%Y'))]"/>
+        </xpath>
+      </field>
+    </record>
+    
 </odoo>
