@@ -54,6 +54,7 @@ class RunResultReport(models.Model):
                         ON start.runner_id = runner.id AND start.checkpoint_km = 0
                       JOIN run_split finish
                         ON finish.runner_id = runner.id AND finish.checkpoint_km = 10
+                     WHERE runner.disqualified IS NOT TRUE
                 )
                 SELECT runner_id AS id,
                        runner_id,
