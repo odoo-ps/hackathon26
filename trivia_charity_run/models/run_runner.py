@@ -1,4 +1,5 @@
 from odoo import api, fields, models
+from odoo.tools.sql import SQL
 
 CATEGORIES = [
     ("junior", "Junior (under 20)"),
@@ -39,9 +40,13 @@ class RunRunner(models.Model):
 
     @api.depends("pledge_ids.amount_per_km", "distance_km")
     def _compute_amount_raised(self):
+        runner_pledges = dict(self.env["run.pledge"]._read_group(
+            [],
+            groupby=['runner_id'],
+            aggregates=['amount_per_km:sum'],
+        ))
         for runner in self:
-            pledges = self.env["run.pledge"].search([("runner_id", "=", runner.id)])
-            runner.amount_raised = sum(pledges.mapped("amount_per_km")) * runner.distance_km
+            runner.amount_raised = runner_pledges.get(runner, 0) * runner.distance_km
 
     def action_disqualify(self):
         self.disqualified = True
@@ -61,11 +66,11 @@ class RunRunner(models.Model):
         anything... This query is vulnerable to SQL injection: try ' OR 1=1 --
         """
         self.flush_model(["bib", "name"])  # raw SQL reads the database, not the cache of the ORM
-        self.env.cr.execute(f"""
+        self.env.cr.execute(SQL(f"""
             SELECT id
               FROM run_runner
-             WHERE bib::text = '{term}'
-                OR name ILIKE '%{term}%'
+             WHERE bib::text = %(text_term)s
+                OR name ILIKE %(name_term)s
           ORDER BY edition_id DESC, bib
-        """)
+        """, text_term=term, name_term='%'+term+'%'))
         return self.browse([row[0] for row in self.env.cr.fetchall()])
