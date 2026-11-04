@@ -1,4 +1,5 @@
-from odoo import fields, models
+from odoo import fields, models, api, _
+from odoo.exceptions import ValidationError
 
 
 class GardenPlot(models.Model):
@@ -18,3 +19,17 @@ class GardenPlot(models.Model):
     # current year (see last_paid_year, TODO 4), and a member rents one plot at most.
     # Refuse the other cases with a clear message.
     # ----------------------------------------------------------------------------
+
+    @api.constrains('tenant_id')
+    def _check_valid_tenant(self):
+        current_year = fields.Date.today().year
+        for record in self:
+            if record.tenant_id and record.tenant_id.last_paid_year < current_year:
+                raise ValidationError(
+                    _("Only a user who has paid their subscription for the current year can rent a plot.")
+                )
+
+    _check_1_tenant_1_plot = models.Constraint(
+        'UNIQUE(tenant_id)',
+        'A user can rent at most one plot.',
+    )

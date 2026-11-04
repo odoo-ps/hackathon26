@@ -9,4 +9,6 @@
               action="garden_plot_action"/>
 
     <!-- TODO 3: a menu "Membership Fees" opening the fees -->
+    <menuitem id="menu_garden_company_fees" name="Membership Fees" parent="menu_garden_root" sequence="20"
+              action="garden_fees_action"/>
 </odoo>
