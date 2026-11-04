@@ -1,6 +1,7 @@
 from dateutil.relativedelta import relativedelta
 
 from odoo import api, fields, models
+from odoo.orm.domains import Domain
 
 SPECIES = [
     ("cat", "Cat"),
@@ -84,4 +85,14 @@ class ShelterAnimal(models.Model):
         adopted yet, ordered by name. When ``species`` is given (e.g. 'cat'), only the
         animals of this species.
         """
-        return self.browse()
+        domain = Domain([('adopted', '=', False), ('is_published', '=', True)])
+        if species:
+            domain &= Domain('species', 'in', species)
+        return self.search(domain)  # no need to force order='name' as it already the default
+
+    @api.depends('name')
+    def _compute_website_url(self):
+        super()._compute_website_url()
+        for animal in self:
+            if animal.id:  # avoid to perform a slug on a not yet saved record in case of an onchange.
+                animal.website_url = '/adopt/%s' % self.env['ir.http']._slug(animal)

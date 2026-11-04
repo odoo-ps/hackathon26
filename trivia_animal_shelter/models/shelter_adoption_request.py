@@ -39,4 +39,7 @@ class ShelterAdoptionRequest(models.Model):
 
         :return: the new request
         """
-        raise NotImplementedError("TODO 4")
+        request_vals = {k: values.get(k) for k in ['name', 'phone', 'message']}
+        request_vals['email'] = values['email']  # mandatory
+        request_vals['animal_id'] = animal.id
+        return self.create(request_vals)

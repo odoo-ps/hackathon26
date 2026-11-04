@@ -20,6 +20,29 @@
                     ⭐ BONUS: above the grid, one button per species to filter the animals (/adopt?species=cat),
                     the buttons of the species are given by request.env['shelter.animal']._get_species().
                     -->
+                    <section id="species">
+                        <h2>Species</h2>
+                        <div class="row">
+                            <div class="col-12 grid gap-1">
+                                <t t-foreach="all_species" t-as="species">
+                                    <a t-attf-class="btn #{'btn-primary' if species[0] == current_species else 'btn-secondary'}"
+                                       t-attf-href="/adopt?species=#{species[0]}" t-out="species[1]"></a>
+                                </t>
+                                <a t-if="current_species" class="btn btn-secondary" href="/adopt">All species</a> 
+                            </div>
+                        </div>
+                    </section>
+                    <section id="animals">
+                        <h2>Animals</h2>
+                        <div class="alert alert-success" t-if="not animals">All animals have already been adopted!</div>
+                        <div t-else="" class="row">
+                            <t t-foreach="animals" t-as="animal">
+                                <div class="col-xs-12 col-md-6 col-lg-4">
+                                    <t t-call="trivia_animal_shelter.animal_card" animal="animal"/>
+                                </div>
+                            </t>
+                        </div>
+                    </section>
                 </div>
             </div>
         </t>
@@ -33,7 +56,14 @@
          and a link to the page of the animal (animal.website_url).
          ====================================================================== -->
     <template id="animal_card" name="Adopt: Animal Card">
-        <t/>
+        <div class="card h-100 o_shelter_card" t-att-data-animal-id="animal.id">
+            <div><t t-out="animal.species_emoji"/><a t-att-href="animal.website_url" t-out="animal.name"></a> is looking for a new best friend!</div>
+            <div>Species: <span t-field="animal.species"/></div><br/>
+            <div>Breed: <span t-field="animal.breed"/></div><br/>
+            <div>Sex: <span t-field="animal.sex"/></div><br/>
+            <div>Age: <span t-field="animal.age"/></div><br/>
+            <div>Birth Date: <span t-field="animal.birth_date"/></div><br/>
+        </div>
     </template>
 
     <!-- ======================================================================
@@ -49,6 +79,41 @@
             <div id="wrap" class="o_shelter">
                 <div class="container py-5">
                     <a href="/adopt">← All the animals</a>
+                    <h1>Hello I'm <span t-out="animal.name"/></h1>
+                    <div class="info">
+                        <div>Species: <span t-field="animal.species"/></div><br/>
+                        <div>Breed: <span t-field="animal.breed"/></div><br/>
+                        <div>Sex: <span t-field="animal.sex"/></div><br/>
+                        <div>Age: <span t-field="animal.age"/></div><br/>
+                        <div>Birth Date: <span t-field="animal.birth_date"/></div><br/>
+                        <div>
+                            <span t-field="animal.description"/>
+                        </div>
+                    </div>
+                    <hr/>
+                    <h3>Adopt me!</h3>
+                    <form class="form" method="post" t-attf-action="/adopt/#{slug(animal)}/request">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <div class="mb-3 row">
+                            <label for="email">Email</label>
+                            <input type="email" required="required" name="email"/>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="name">Name</label>
+                            <input type="text" name="name"/>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="phone">Phone</label>
+                            <input type="text" name="phone"/>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="email">Message</label>
+                            <textarea type="text" name="message" rows="10"/>
+                        </div>
+                        <div class="mb-3 row">
+                            <button type="submit">Send request</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </t>
@@ -72,6 +137,13 @@
     </template>
 
     <!-- TODO 5: a menu "Adopt" in the main menu of the website, opening /adopt (model website.menu) -->
+    <record id="adaption_menu" model="website.menu">
+        <field name="website_id" ref="base.default_website"/>
+        <field name="name">Home</field>
+        <field name="url">/adopt</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">20</field>
+    </record>
 
     <!-- ⭐ BONUS: a building block (snippet) "Animal of the week", available in the website editor -->
 </odoo>
