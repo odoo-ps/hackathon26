@@ -1,0 +1,3 @@
+# Odoo Enterprise, downloaded by `make init` (never pushed: Odoo.sh brings its own)
+/enterprise/
+__pycache__/

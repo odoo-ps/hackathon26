@@ -1,4 +1,5 @@
-# Trivi'Hackathon 2026: Odoo 20 (Community) and PostgreSQL to develop the challenges locally.
+# Trivi'Hackathon 2026: Odoo 20 and PostgreSQL to develop the challenges locally.
+# Odoo Enterprise is added by `make init` when your GitHub account can read odoo/enterprise.
 # Usage: see README.md.
 name: trivia-hackathon
 

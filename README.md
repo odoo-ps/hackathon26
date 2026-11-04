@@ -22,7 +22,7 @@ An Odoo hackathon in the form of a Trivial Pursuit: 6 non-profit organisations, 
 
 - Your team has its **own branch** of this repository. Every push to it builds the team's **Odoo.sh development branch**, with a brand new database.
 - To write and test your code before pushing, run Odoo **on your computer** with Docker (see below). The local database contains exactly the same hackathon data as Odoo.sh, because all the data are created by the modules.
-- Locally, Odoo is the **Community** edition. It is enough for the 4 development challenges. The 2 functional challenges are played on Odoo.sh (Enterprise).
+- Locally, Odoo is the **Enterprise** edition, like on Odoo.sh: `make init` downloads it into the `enterprise` folder (ignored by git) if your GitHub account can read [odoo/enterprise](https://github.com/odoo/enterprise). Without that access, Odoo is the **Community** edition: it is enough for the 4 development challenges, and the 2 functional challenges are played on Odoo.sh.
 - A new Odoo.sh build means a new database: **keep the flags** of the challenges you solved, so that you can submit them again on the new database to get your wedges back.
 
 ### 1. Install Docker
@@ -48,6 +48,7 @@ The commands are the same in every terminal (PowerShell, bash, zsh). On macOS, L
 
 | What | Commands | Shortcut |
 |---|---|---|
+| Download Odoo Enterprise (first time, optional) | `git init enterprise`<br>`git -C enterprise fetch --depth 1 git@github.com:odoo/enterprise.git c22fa0eff147a5f201899fb4774388343681ddba`<br>`git -C enterprise checkout FETCH_HEAD` | done by `make init` |
 | Create the database and install the modules (first time) | `docker compose run --rm odoo odoo -d trivia -i trivia_hackathon,trivia_food_bank,trivia_reuse_center,trivia_garden,trivia_animal_shelter,trivia_charity_run,trivia_festival --stop-after-init`<br>`docker compose up -d` | `make init` |
 | Update the modules after a change | `docker compose stop odoo`<br>`docker compose run --rm odoo odoo -d trivia -u trivia_hackathon,trivia_food_bank,trivia_reuse_center,trivia_garden,trivia_animal_shelter,trivia_charity_run,trivia_festival --stop-after-init`<br>`docker compose up -d` | `make update` |
 | Start / stop Odoo | `docker compose up -d` / `docker compose down` | `make up` / `make down` |
@@ -84,7 +85,7 @@ Un hackathon Odoo façon Trivial Pursuit : 6 ASBL, 6 challenges, 6 parts de came
 
 - Votre équipe a **sa propre branche** de ce dépôt. Chaque push dessus construit la **branche de développement Odoo.sh** de l'équipe, avec une base de données toute neuve.
 - Pour écrire et tester votre code avant de pousser, lancez Odoo **sur votre ordinateur** avec Docker (voir ci-dessous). La base locale contient exactement les mêmes données de hackathon qu'Odoo.sh, car toutes les données sont créées par les modules.
-- En local, Odoo est en édition **Community**. Cela suffit pour les 4 challenges de développement. Les 2 challenges fonctionnels se jouent sur Odoo.sh (Enterprise).
+- En local, Odoo est en édition **Enterprise**, comme sur Odoo.sh : `make init` la télécharge dans le dossier `enterprise` (ignoré par git) si votre compte GitHub a accès à [odoo/enterprise](https://github.com/odoo/enterprise). Sans cet accès, Odoo est en édition **Community** : cela suffit pour les 4 challenges de développement, et les 2 challenges fonctionnels se jouent sur Odoo.sh.
 - Un nouveau build Odoo.sh signifie une nouvelle base : **gardez les flags** des challenges résolus, pour les soumettre à nouveau sur la nouvelle base et récupérer vos parts.
 
 ### 1. Installer Docker
@@ -110,6 +111,7 @@ Les commandes sont les mêmes dans tous les terminaux (PowerShell, bash, zsh). S
 
 | Quoi | Commandes | Raccourci |
 |---|---|---|
+| Télécharger Odoo Enterprise (première fois, optionnel) | `git init enterprise`<br>`git -C enterprise fetch --depth 1 git@github.com:odoo/enterprise.git c22fa0eff147a5f201899fb4774388343681ddba`<br>`git -C enterprise checkout FETCH_HEAD` | fait par `make init` |
 | Créer la base et installer les modules (première fois) | `docker compose run --rm odoo odoo -d trivia -i trivia_hackathon,trivia_food_bank,trivia_reuse_center,trivia_garden,trivia_animal_shelter,trivia_charity_run,trivia_festival --stop-after-init`<br>`docker compose up -d` | `make init` |
 | Mettre à jour les modules après une modification | `docker compose stop odoo`<br>`docker compose run --rm odoo odoo -d trivia -u trivia_hackathon,trivia_food_bank,trivia_reuse_center,trivia_garden,trivia_animal_shelter,trivia_charity_run,trivia_festival --stop-after-init`<br>`docker compose up -d` | `make update` |
 | Démarrer / arrêter Odoo | `docker compose up -d` / `docker compose down` | `make up` / `make down` |
