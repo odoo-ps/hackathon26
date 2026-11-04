@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="challenge_reuse_center" model="trivia.challenge">
+        <field name="sequence">20</field>
+        <field name="code">reuse_center</field>
+        <field name="name">Second Life</field>
+        <field name="organization">La Ressourcerie</field>
+        <field name="topic">Functional: Inventory, traceability, pricelists, Point of Sale</field>
+        <field name="difficulty">easy</field>
+        <field name="wedge_color">green</field>
+        <field name="summary">No code: put the donated objects for sale, open the till with a social pricelist… and find a chest of drawers that vanished.</field>
+        <field name="description" type="html">
+            <p><b>La Ressourcerie</b> collects donated objects, repairs them and sells them at solidarity prices in its shop. Help the volunteers manage their stock and their till with Odoo.</p>
+            <p>No code in this challenge: everything is done in the interface of Odoo, on your Odoo.sh database.</p>
+            <ol>
+                <li><b>The articles</b> (Inventory): 8 products whose inventory is tracked, in 3 product categories <i>Vêtements</i>, <i>Meubles</i> and <i>Électro</i>, each with a sales price.</li>
+                <li><b>The social pricelist</b> (settings of the Point of Sale, <i>Flexible Pricelists</i>; these settings need a shop: create it first with the tile <i>Retail</i>, see task 4): activate the pricelists, create a pricelist <i>Tarif social</i> giving 50 % off, and make it available in the shop.</li>
+                <li><b>A donation</b> (Inventory): receive and validate the donation of a few objects from the contact <i>Donateur anonyme</i>.</li>
+                <li><b>The till</b> (Point of Sale): create the shop of the Ressourcerie (the tile <i>Retail</i> is enough), open a session and make 3 sales, one of them at the <i>Tarif social</i>.</li>
+                <li><b>The end of the day</b>: close the session of the till.</li>
+                <li><b>The lost chest of drawers</b> (Inventory): Josiane Feller brought back the Art Deco chest of drawers she had bought, because a drawer was broken… and nobody has seen it since. Find it, create an internal location <i>Atelier réparation</i>, and move this very chest of drawers there.</li>
+            </ol>
+            <p>⭐ Bonus: an appealing sales description on the 8 articles; the <i>Tarif social</i> limited to one product category; a customer on a ticket; the analysis of the sales by product category (<i>Point of Sale › Reporting › Orders</i>) saved in your favorites.</p>
+        </field>
+    </record>
+</odoo>

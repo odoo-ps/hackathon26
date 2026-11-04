@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="challenge_festival" model="trivia.challenge">
+        <field name="sequence">60</field>
+        <field name="code">festival</field>
+        <field name="name">The Welcome Desk</field>
+        <field name="organization">Festival Solidaire</field>
+        <field name="topic">JavaScript: OWL components, field widget, client action</field>
+        <field name="difficulty">medium</field>
+        <field name="wedge_color">pink</field>
+        <field name="summary">The festival opens today: show how full it is, and give the volunteers a welcome desk to check the attendees in.</field>
+        <field name="description" type="html">
+            <p>The <b>Festival Solidaire</b> opens its doors today: 120 people registered for 150 seats. The organisers want to see at a glance how full the festival is, and the volunteers of the entrance need a simple screen to welcome the attendees.</p>
+            <p>The server side is ready: write the JavaScript (OWL components) of the module <code>trivia_festival</code>. The TODOs are in <code>static/src/</code>, numbered like the tasks below.</p>
+            <ol>
+                <li><b>The fill gauge</b> (<code>static/src/fill_gauge/</code>, <code>views/event_event_views.xml</code>): a field widget <code>festival_fill_gauge</code> which shows the seats taken as a progress bar, green, orange then red, used on the form of the event.</li>
+                <li><b>The welcome desk</b> (<code>static/src/kiosk/</code>, <code>views/menus.xml</code>): a client action <code>festival_kiosk</code> which lists the registrations, with a <i>Check in</i> button that calls the server, and a <i>Welcome Desk</i> menu.</li>
+                <li><b>Open the doors!</b> Check 3 attendees in from your welcome desk.</li>
+            </ol>
+            <p>⭐ Bonus: a counter of the attendees in the systray (the icons at the top right), and a search box in the welcome desk.</p>
+            <p>💡 Odoo 20 uses <b>OWL 3</b>, while the documentation and the AI often show OWL 2: read the cheat sheet at the top of <code>fill_gauge.js</code>. A reload of the page is enough after a change of JavaScript or of an OWL template; a new record (client action, menu) needs an update of the modules (<code>make update</code>). Open Odoo with <code>?debug=assets</code> to read the errors in the console of the browser.</p>
+        </field>
+    </record>
+</odoo>

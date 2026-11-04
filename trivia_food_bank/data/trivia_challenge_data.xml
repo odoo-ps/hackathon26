@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="challenge_food_bank" model="trivia.challenge">
+        <field name="sequence">10</field>
+        <field name="code">food_bank</field>
+        <field name="name">Donors and Patrons</field>
+        <field name="organization">Les Restos du Quartier</field>
+        <field name="topic">Functional: Contacts, Invoicing, CRM, Email Marketing</field>
+        <field name="difficulty">easy</field>
+        <field name="wedge_color">blue</field>
+        <field name="summary">No code: import the donors, create the donation products, follow the patrons, thank everybody and invoice the donations.</field>
+        <field name="description" type="html">
+            <p><b>Les Restos du Quartier</b> is a food aid association: volunteers collect food and serve meals in the neighbourhood, thanks to donors and patrons. Until now, everything was managed with spreadsheets and emails: help them move to Odoo.</p>
+            <p>No code in this challenge: everything is done in the interface of Odoo, on your Odoo.sh database.</p>
+            <ol>
+                <li><b>The donors</b> (Contacts): import the file <a href="/trivia_food_bank/static/data/donors.csv">donors.csv</a> (10 donors, among which the company Boulangerie Kremer and its 2 contacts), then tag them: <i>Donateur</i> for everybody, <i>Bénévole</i> for Élise Bernard and Marc Kieffer, <i>Entreprise</i> for the bakery.</li>
+                <li><b>The products</b> (Invoicing): two services in a product category <i>Dons</i>: <i>Don libre</i>, and <i>Cotisation membre</i> sold 25.</li>
+                <li><b>The patrons</b> (CRM): a sales team <i>Mécénat</i> with its pipeline of 4 stages, <i>Identifié</i>, <i>Contacté</i>, <i>Dossier envoyé</i> and <i>Signé</i>, and 3 opportunities, one of them won.</li>
+                <li><b>Thank you!</b> (Email Marketing): a mailing list <i>Donateurs</i> with the 10 donors (tip: from the list of the contacts, <i>Actions › Add to Mailing List</i>), and a thank-you mailing sent to this list.</li>
+                <li><b>The donations</b> (Invoicing): confirm 3 invoices of donations or fees to donors, then analyse the invoices by donor in a pivot view (<i>Invoicing › Reporting › Management › Invoice Analysis</i>, grouped by <i>Partner</i>) and save this analysis in your favorites (<i>Save search</i>, in the menu of the search bar).</li>
+            </ol>
+            <p>⭐ Bonus: a field <i>N° d'entreprise</i> (company number) on the contacts, created with Studio; a 0 % tax on the two products; an activity planned on an opportunity of the patrons; the mailing really processed (on a test database, run the scheduled action <i>Mail Marketing: Process queue</i> manually); a donation paid.</p>
+        </field>
+    </record>
+</odoo>

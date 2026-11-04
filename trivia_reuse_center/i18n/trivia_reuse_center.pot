@@ -1,0 +1,318 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* trivia_reuse_center
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20261015\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-30 15:21+0000\n"
+"PO-Revision-Date: 2026-10-30 15:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: trivia_reuse_center
+#: model:ir.module.module,description:base.module_trivia_reuse_center
+msgid ""
+"\n"
+"La Ressourcerie\n"
+"===============\n"
+"Functional challenge of the Trivi'Hackathon (Inventory, traceability, pricelists, Point of Sale): no code,\n"
+"everything is done in the interface of Odoo.\n"
+"\n"
+"La Ressourcerie collects donated objects, repairs them and sells them at solidarity prices.\n"
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "%(count)s paid sale(s) at the till: make 3 sales (TODO 4)."
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid ""
+"%(count)s product(s) whose inventory is tracked in the categories Vêtements,"
+" Meubles and Électro: create 8 of them (TODO 1)."
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "1. The articles"
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "2. The social pricelist"
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "3. A donation is received"
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "4. Sales at the till"
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "5. The session is closed"
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "6. The lost chest of drawers is in the workshop"
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"<b>A donation</b> (Inventory): receive and validate the donation of a few "
+"objects from the contact <i>Donateur anonyme</i>."
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"<b>La Ressourcerie</b> collects donated objects, repairs them and sells them"
+" at solidarity prices in its shop. Help the volunteers manage their stock "
+"and their till with Odoo."
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"<b>The articles</b> (Inventory): 8 products whose inventory is tracked, in 3"
+" product categories <i>Vêtements</i>, <i>Meubles</i> and <i>Électro</i>, "
+"each with a sales price."
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid "<b>The end of the day</b>: close the session of the till."
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"<b>The lost chest of drawers</b> (Inventory): Josiane Feller brought back "
+"the Art Deco chest of drawers she had bought, because a drawer was broken… "
+"and nobody has seen it since. Find it, create an internal location "
+"<i>Atelier réparation</i>, and move this very chest of drawers there."
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"<b>The social pricelist</b> (settings of the Point of Sale, <i>Flexible "
+"Pricelists</i>; these settings need a shop: create it first with the tile "
+"<i>Retail</i>, see task 4): activate the pricelists, create a pricelist "
+"<i>Tarif social</i> giving 50 % off, and make it available in the shop."
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"<b>The till</b> (Point of Sale): create the shop of the Ressourcerie (the "
+"tile <i>Retail</i> is enough), open a session and make 3 sales, one of them "
+"at the <i>Tarif social</i>."
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "A customer on a ticket"
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "Analysis of the sales by category"
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "Create the articles first (TODO 1)."
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model:ir.model.fields,field_description:trivia_reuse_center.field_trivia_challenge__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "Each article must have a sales price."
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model:trivia.challenge,topic:trivia_reuse_center.challenge_reuse_center
+msgid "Functional: Inventory, traceability, pricelists, Point of Sale"
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model:ir.model.fields,field_description:trivia_reuse_center.field_trivia_challenge__id
+msgid "ID"
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model:ir.module.module,shortdesc:base.module_trivia_reuse_center
+msgid "La Ressourcerie"
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid ""
+"No closed session of the till with your sales yet: close the session (TODO "
+"5)."
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"No code in this challenge: everything is done in the interface of Odoo, on "
+"your Odoo.sh database."
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model:trivia.challenge,summary:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"No code: put the donated objects for sale, open the till with a social "
+"pricelist… and find a chest of drawers that vanished."
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "No favorite of the sales is grouped by product category."
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "No sale at the Tarif social yet (TODO 4)."
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "No sale at the till has a customer."
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "No validated receipt from the contact Donateur anonyme yet (TODO 3)."
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "Sales descriptions of the articles"
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model:trivia.challenge,name:trivia_reuse_center.challenge_reuse_center
+msgid "Second Life"
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "Social pricelist limited to a category"
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "Some articles have no sales description."
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "The Atelier réparation must be an internal location."
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "The Tarif social does not give 50 % off any article."
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "The articles must use the 3 categories Vêtements, Meubles and Électro."
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid ""
+"The chest of drawers of Josiane Feller is not in a location Atelier "
+"réparation yet (TODO 6)."
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "The rules of the Tarif social are not limited to a product category."
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid ""
+"There is a chest of drawers in the Atelier réparation, but not the one "
+"Josiane Feller brought back: check its serial number (TODO 6)."
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "There is no pricelist Tarif social (TODO 2)."
+msgstr ""
+
+#. module: trivia_reuse_center
+#. odoo-python
+#: code:addons/trivia_reuse_center/models/trivia_challenge.py:0
+msgid "There is no product category %(name)s (TODO 1)."
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model:ir.module.module,summary:base.module_trivia_reuse_center
+msgid ""
+"Trivi'Hackathon challenge: the articles, donations and till of a reuse "
+"centre"
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model:ir.model,name:trivia_reuse_center.model_trivia_challenge
+msgid "Trivia Challenge"
+msgstr ""
+
+#. module: trivia_reuse_center
+#: model_terms:trivia.challenge,description:trivia_reuse_center.challenge_reuse_center
+msgid ""
+"⭐ Bonus: an appealing sales description on the 8 articles; the <i>Tarif "
+"social</i> limited to one product category; a customer on a ticket; the "
+"analysis of the sales by product category (<i>Point of Sale › Reporting › "
+"Orders</i>) saved in your favorites."
+msgstr ""

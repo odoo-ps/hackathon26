@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="trivia_challenge_view_kanban" model="ir.ui.view">
+        <field name="name">trivia.challenge.kanban</field>
+        <field name="model">trivia.challenge</field>
+        <field name="arch" type="xml">
+            <kanban create="false" delete="false" group_create="false">
+                <templates>
+                    <t t-name="card">
+                        <widget name="web_ribbon" title="Solved" bg_color="text-bg-success" invisible="state != 'solved'"/>
+                        <div class="d-flex align-items-center gap-3 mb-2">
+                            <field name="wedge" class="display-5"/>
+                            <div class="d-flex flex-column">
+                                <field name="name" class="fw-bold fs-5"/>
+                                <field name="organization" class="text-muted"/>
+                            </div>
+                        </div>
+                        <field name="topic" class="fw-semibold"/>
+                        <field name="summary" class="mt-1 mb-2"/>
+                        <footer class="align-items-center">
+                            <field name="difficulty" widget="badge"
+                                   decoration-success="difficulty == 'easy'"
+                                   decoration-warning="difficulty == 'medium'"
+                                   decoration-danger="difficulty == 'hard'"/>
+                            <field name="stars" invisible="not star_total"/>
+                            <div class="ms-auto d-flex gap-1">
+                                <button name="action_open_flag_wizard" type="object" string="Submit a flag"
+                                        class="btn btn-secondary btn-sm" invisible="state == 'solved'"/>
+                                <button name="action_run_checker" type="object" string="Check"
+                                        class="btn btn-primary btn-sm" context="{'trivia_open_challenge': True}"/>
+                            </div>
+                        </footer>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="trivia_challenge_view_form" model="ir.ui.view">
+        <field name="name">trivia.challenge.form</field>
+        <field name="model">trivia.challenge</field>
+        <field name="arch" type="xml">
+            <form create="false" delete="false">
+                <header>
+                    <button name="action_run_checker" type="object" string="Check" class="btn-primary" data-hotkey="v"/>
+                    <button name="action_open_flag_wizard" type="object" string="Submit a flag"
+                            invisible="state == 'solved'"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Solved" bg_color="text-bg-success" invisible="state != 'solved'"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="wedge" class="me-2"/>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                        <h3><field name="organization" readonly="1"/></h3>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="topic" readonly="1"/>
+                            <field name="difficulty" readonly="1" widget="badge"/>
+                        </group>
+                        <group>
+                            <field name="board"/>
+                            <field name="stars" invisible="not star_total"/>
+                            <field name="attempt_count"/>
+                            <field name="solved_date" invisible="state != 'solved'"/>
+                            <field name="solved_by_id" invisible="state != 'solved'"/>
+                            <field name="flag" invisible="not flag" widget="CopyClipboardChar"/>
+                        </group>
+                    </group>
+                    <!-- the report comes first, so that it is displayed right after a check -->
+                    <notebook>
+                        <page string="Checker Report" name="checker_report" invisible="not checker_report">
+                            <field name="checker_report"/>
+                        </page>
+                        <page string="Statement" name="statement">
+                            <field name="description" readonly="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="trivia_challenge_action" model="ir.actions.act_window">
+        <field name="name">Game Board</field>
+        <field name="res_model">trivia.challenge</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No challenge on the board yet</p>
+            <p>Install the modules of the non-profit organisations (trivia_*) to bring their challenges.</p>
+        </field>
+    </record>
+</odoo>

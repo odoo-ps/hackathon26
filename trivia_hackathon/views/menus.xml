@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_trivia_root" name="Trivi'Hackathon" sequence="1"
+              web_icon="trivia_hackathon,static/description/icon.png"
+              action="trivia_challenge_action"/>
+
+    <menuitem id="menu_trivia_board" name="Game Board" parent="menu_trivia_root" sequence="10"
+              action="trivia_challenge_action"/>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="challenge_shelter" model="trivia.challenge">
+        <field name="sequence">40</field>
+        <field name="code">shelter</field>
+        <field name="name">Adopt Me!</field>
+        <field name="organization">Refuge Les 4 Pattes</field>
+        <field name="topic">Website: controllers, QWeb, Bootstrap, SCSS, PDF</field>
+        <field name="difficulty">medium</field>
+        <field name="wedge_color">purple</field>
+        <field name="summary">Build the adoption pages of the website: the animals waiting for a family, their page and the adoption form.</field>
+        <field name="description" type="html">
+            <p>The animal shelter <b>Les 4 Pattes</b> takes care of 15 cats, dogs, rabbits and birds. Ten of them are waiting for a family, but nobody knows it: the shelter has no adoption page on its website yet.</p>
+            <p>Complete the module <code>trivia_animal_shelter</code>: the models, the backend and the data are ready, the website is up to you. The TODOs of the code are numbered like the tasks below.</p>
+            <ol>
+                <li><b>The adoptable animals</b> (<code>models/shelter_animal.py</code>): the method <code>_get_adoptable_animals()</code>, the business logic of the pages.</li>
+                <li><b>The page /adopt</b> (<code>controllers/main.py</code>, <code>views/website_templates.xml</code>): a public page with a responsive grid of cards, one card per adoptable animal.</li>
+                <li><b>The page of an animal</b>: its URL is <code>animal.website_url</code>, e.g. <code>/adopt/rex-6</code>.</li>
+                <li><b>The adoption request</b> (<code>models/shelter_adoption_request.py</code> and the same files): a form on the page of the animal, posted to the website, which creates the request safely with <code>_create_from_website()</code>. Then <b>adopt an animal yourself</b>, as a visitor, from a private window!</li>
+                <li><b>Style and menu</b> (<code>static/src/scss/shelter.scss</code>, <code>__manifest__.py</code>): the SCSS file in the assets of the website, and an <i>Adopt</i> menu on the website.</li>
+                <li><b>The adoption certificate</b> (<code>report/adoption_certificate_report.xml</code>): a PDF report printable from an adoption request.</li>
+            </ol>
+            <p>⭐ Bonus: buttons to filter the animals by species, and an <i>Animal of the week</i> building block for the website editor.</p>
+            <p>💡 Keep the controllers thin: the checker tests the methods of the models directly. After a change of Python code, or a new file or record, update the modules (<code>make update</code>). The website is at <code>/adopt</code>, open it in a private window to see it as a visitor.</p>
+        </field>
+    </record>
+</odoo>

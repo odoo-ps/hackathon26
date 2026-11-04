@@ -1,0 +1,391 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* trivia_food_bank
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0-20261015\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-30 15:01+0000\n"
+"PO-Revision-Date: 2026-10-30 15:01+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: trivia_food_bank
+#: model:ir.module.module,description:base.module_trivia_food_bank
+msgid ""
+"\n"
+"Les Restos du Quartier\n"
+"======================\n"
+"Functional challenge of the Trivi'Hackathon (Contacts, Invoicing, CRM, Email Marketing): no code, everything is\n"
+"done in the interface of Odoo.\n"
+"\n"
+"Les Restos du Quartier is a food aid association which wants to manage its donors, patrons and donations in Odoo.\n"
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid ""
+"%(count)s donation invoice(s) confirmed: confirm 3 invoices of Don libre or "
+"Cotisation membre to donors (TODO 5)."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "%(product)s must be a service."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "%(product)s must be in the product category Dons."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "%(product)s must be sold %(price)s."
+msgstr ""
+
+#. module: trivia_food_bank
+#: model_terms:trivia.challenge,description:trivia_food_bank.challenge_food_bank
+msgid ""
+"(10 donors, among which the company Boulangerie Kremer and its 2 contacts), "
+"then tag them: <i>Donateur</i> for everybody, <i>Bénévole</i> for Élise "
+"Bernard and Marc Kieffer, <i>Entreprise</i> for the bakery."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "0 % tax on the donation products"
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "1. The donors are imported"
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "1. The donors are tagged"
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "2. The donation products"
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "3. The pipeline of the patrons"
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "4. The thank-you mailing"
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "5. The analysis by donor"
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "5. The donations are invoiced"
+msgstr ""
+
+#. module: trivia_food_bank
+#: model_terms:trivia.challenge,description:trivia_food_bank.challenge_food_bank
+msgid ""
+"<b>Les Restos du Quartier</b> is a food aid association: volunteers collect "
+"food and serve meals in the neighbourhood, thanks to donors and patrons. "
+"Until now, everything was managed with spreadsheets and emails: help them "
+"move to Odoo."
+msgstr ""
+
+#. module: trivia_food_bank
+#: model_terms:trivia.challenge,description:trivia_food_bank.challenge_food_bank
+msgid ""
+"<b>Thank you!</b> (Email Marketing): a mailing list <i>Donateurs</i> with "
+"the 10 donors (tip: from the list of the contacts, <i>Actions › Add to "
+"Mailing List</i>), and a thank-you mailing sent to this list."
+msgstr ""
+
+#. module: trivia_food_bank
+#: model_terms:trivia.challenge,description:trivia_food_bank.challenge_food_bank
+msgid ""
+"<b>The donations</b> (Invoicing): confirm 3 invoices of donations or fees to"
+" donors, then analyse the invoices by donor in a pivot view (<i>Invoicing › "
+"Reporting › Management › Invoice Analysis</i>, grouped by <i>Partner</i>) "
+"and save this analysis in your favorites (<i>Save search</i>, in the menu of"
+" the search bar)."
+msgstr ""
+
+#. module: trivia_food_bank
+#: model_terms:trivia.challenge,description:trivia_food_bank.challenge_food_bank
+msgid "<b>The donors</b> (Contacts): import the file"
+msgstr ""
+
+#. module: trivia_food_bank
+#: model_terms:trivia.challenge,description:trivia_food_bank.challenge_food_bank
+msgid ""
+"<b>The patrons</b> (CRM): a sales team <i>Mécénat</i> with its pipeline of 4"
+" stages, <i>Identifié</i>, <i>Contacté</i>, <i>Dossier envoyé</i> and "
+"<i>Signé</i>, and 3 opportunities, one of them won."
+msgstr ""
+
+#. module: trivia_food_bank
+#: model_terms:trivia.challenge,description:trivia_food_bank.challenge_food_bank
+msgid ""
+"<b>The products</b> (Invoicing): two services in a product category "
+"<i>Dons</i>: <i>Don libre</i>, and <i>Cotisation membre</i> sold 25."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "A donation is paid"
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "An activity on a patron opportunity"
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid ""
+"Boulangerie Kremer must be a company: in Odoo 20, a contact without parent "
+"company and with a Tax ID."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "Boulangerie Kremer must have the tag Entreprise."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "Company number on the contacts"
+msgstr ""
+
+#. module: trivia_food_bank
+#: model:ir.model.fields,field_description:trivia_food_bank.field_trivia_challenge__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: trivia_food_bank
+#: model:trivia.challenge,name:trivia_food_bank.challenge_food_bank
+msgid "Donors and Patrons"
+msgstr ""
+
+#. module: trivia_food_bank
+#: model:trivia.challenge,topic:trivia_food_bank.challenge_food_bank
+msgid "Functional: Contacts, Invoicing, CRM, Email Marketing"
+msgstr ""
+
+#. module: trivia_food_bank
+#: model:ir.model.fields,field_description:trivia_food_bank.field_trivia_challenge__id
+msgid "ID"
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "Import the donors first (TODO 1)."
+msgstr ""
+
+#. module: trivia_food_bank
+#: model:ir.module.module,shortdesc:base.module_trivia_food_bank
+msgid "Les Restos du Quartier"
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "No activity is planned on an opportunity of the team Mécénat."
+msgstr ""
+
+#. module: trivia_food_bank
+#: model_terms:trivia.challenge,description:trivia_food_bank.challenge_food_bank
+msgid ""
+"No code in this challenge: everything is done in the interface of Odoo, on "
+"your Odoo.sh database."
+msgstr ""
+
+#. module: trivia_food_bank
+#: model:trivia.challenge,summary:trivia_food_bank.challenge_food_bank
+msgid ""
+"No code: import the donors, create the donation products, follow the "
+"patrons, thank everybody and invoice the donations."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "No donation invoice is paid yet."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid ""
+"No favorite of the invoices is grouped by customer: save your pivot analysis"
+" by donor in your favorites (TODO 5)."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "No mailing is addressed to the list Donateurs yet."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "No opportunity of the team Mécénat is won yet."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid ""
+"Paul Kremer and Anne Kremer must be contacts of the company Boulangerie "
+"Kremer."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "The contacts have no custom field yet."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "The mailing has been processed"
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid ""
+"The mailing has not been processed yet: run the scheduled action Mail "
+"Marketing: Process queue."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "The mailing list Donateurs contains %(count)s donor(s) out of 10."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "The mailing to the list Donateurs is still a draft: send it."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "The pipeline has no stage %(stages)s."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid ""
+"The sales taxes of both donation products must be a 0 %% tax. Still to fix: "
+"%(products)s."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "The team Mécénat has %(count)s opportunity(ies): create 3 of them."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "There is no mailing list Donateurs (TODO 4)."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "There is no product %(name)s (TODO 2)."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "There is no sales team Mécénat (TODO 3)."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "These contacts have no tag Donateur: %(names)s."
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid ""
+"These donors are not in the contacts yet: %(names)s. Import the file "
+"donors.csv (TODO 1)."
+msgstr ""
+
+#. module: trivia_food_bank
+#: model:ir.module.module,summary:base.module_trivia_food_bank
+msgid ""
+"Trivi'Hackathon challenge: the donors, patrons and donations of a food aid "
+"association"
+msgstr ""
+
+#. module: trivia_food_bank
+#: model:ir.model,name:trivia_food_bank.model_trivia_challenge
+msgid "Trivia Challenge"
+msgstr ""
+
+#. module: trivia_food_bank
+#: model_terms:trivia.challenge,description:trivia_food_bank.challenge_food_bank
+msgid "donors.csv"
+msgstr ""
+
+#. module: trivia_food_bank
+#. odoo-python
+#: code:addons/trivia_food_bank/models/trivia_challenge.py:0
+msgid "Élise Bernard and Marc Kieffer must have the tag Bénévole."
+msgstr ""
+
+#. module: trivia_food_bank
+#: model_terms:trivia.challenge,description:trivia_food_bank.challenge_food_bank
+msgid ""
+"⭐ Bonus: a field <i>N° d'entreprise</i> (company number) on the contacts, "
+"created with Studio; a 0 % tax on the two products; an activity planned on "
+"an opportunity of the patrons; the mailing really processed (on a test "
+"database, run the scheduled action <i>Mail Marketing: Process queue</i> "
+"manually); a donation paid."
+msgstr ""

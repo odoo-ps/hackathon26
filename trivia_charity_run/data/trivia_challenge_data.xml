@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="challenge_charity_run" model="trivia.challenge">
+        <field name="sequence">50</field>
+        <field name="code">charity_run</field>
+        <field name="name">The Charity Run</field>
+        <field name="organization">La Course du Cœur</field>
+        <field name="topic">SQL: views, window functions, performance, injection</field>
+        <field name="difficulty">hard</field>
+        <field name="wedge_color">orange</field>
+        <field name="summary">Publish the results of the charity run with SQL, speed up the amounts raised, close a security hole and catch a cheater.</field>
+        <field name="description" type="html">
+            <p><b>La Course du Cœur</b> is a 10 km charity run: for each kilometre covered by a runner, their sponsors give money to the association. Three editions, 1 800 runners, thousands of split times: the module <code>trivia_charity_run</code> has all the data, but the results are missing, the list of the runners is slow, the results kiosk has a security hole… and someone cheated.</p>
+            <p>To explore the data, open a PostgreSQL console: <code>make psql</code> (on Odoo.sh: the <i>Shell</i> tab, then <code>psql</code>). The TODOs of the code are numbered like the tasks below.</p>
+            <ol>
+                <li><b>The results</b> (<code>report/run_result_report.py</code>): write the SQL view of the results: the time, the pace and the ranks of each runner who reached the finish.</li>
+                <li><b>Performance</b> (<code>models/run_runner.py</code>, <code>models/run_split.py</code>): compute the amount raised without running one query per runner, and add the missing index on the split times of the runners.</li>
+                <li><b>Security</b> (<code>models/run_runner.py</code>): <code>search_by_bib_or_name()</code> is open to SQL injection, and it cannot even find Seán O'Brien. Fix it.</li>
+                <li><b>The cheater</b>: in the last edition, a runner took a shortcut: between km 5 and km 10, their time is faster than the world record of the 5 km (12 min 35 s). Find them with SQL, then disqualify them (button on the form of the runner).</li>
+            </ol>
+            <p>⭐ Bonus: the disqualified runners are not in the results, and the ranks are computed without them; a pivot view and a graph view of the results.</p>
+            <p>💡 After a change of Python code, update the modules (<code>make update</code>): the SQL view is created again by <code>init()</code>.</p>
+        </field>
+    </record>
+</odoo>

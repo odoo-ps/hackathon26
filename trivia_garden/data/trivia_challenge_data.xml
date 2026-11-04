@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="challenge_garden" model="trivia.challenge">
+        <field name="sequence">30</field>
+        <field name="code">garden</field>
+        <field name="name">The Garden Fees</field>
+        <field name="organization">Gaart fir Jiddereen</field>
+        <field name="topic">Python: models, computed fields, constraints, views</field>
+        <field name="difficulty">medium</field>
+        <field name="wedge_color">yellow</field>
+        <field name="summary">Follow the membership fees of the shared gardens, and only rent the plots to the members who paid this year.</field>
+        <field name="description" type="html">
+            <p><b>Gaart fir Jiddereen</b> (“a garden for everyone”) runs shared gardens in Bonnevoie (Luxembourg) and in the Brill district (Esch-sur-Alzette): 20 members, 12 plots to rent.</p>
+            <p>The treasurer follows the membership fees in a spreadsheet, and some plots are rented by members who did not pay this year. Complete the module <code>trivia_garden</code> so that Odoo does the job. The TODOs of the code are numbered like the tasks below.</p>
+            <ol>
+                <li><b>The fees</b> (<code>models/garden_membership_fee.py</code>): the model <code>garden.membership.fee</code> and its fields, at most one fee per member and per year, and the method <code>action_mark_paid()</code>.</li>
+                <li><b>Access rights</b> (<code>security/ir.access.csv</code>): the internal users can read, create, modify and delete the fees.</li>
+                <li><b>Views of the fees</b> (<code>views/garden_membership_fee_views.xml</code>, <code>views/menus.xml</code>): a list view, a form view with the status in its header and a <i>Mark as paid</i> button only visible on draft fees, an action and a menu.</li>
+                <li><b>The members</b> (<code>models/res_partner.py</code>): the fields of the members on the contacts, among which <code>last_paid_year</code>, stored and always up to date.</li>
+                <li><b>The contact form</b> (<code>views/res_partner_views.xml</code>): a <i>Membership</i> page, and a <i>Not up to date</i> filter for the members who did not pay the current year.</li>
+                <li><b>The plots</b> (<code>models/garden_plot.py</code>): only a member who paid the fee of the current year can rent a plot, and a member rents one plot at most.</li>
+                <li><b>The data</b> (<code>__manifest__.py</code>): load the fees of the members, <code>data/garden_membership_fee_data.xml</code>.</li>
+            </ol>
+            <p>⭐ Bonus: a <i>Fees</i> smart button on the contact form, and a kanban view of the plots grouped by site.</p>
+            <p>💡 After changing Python code, or adding a file, a field or a record, update the modules (<code>make update</code>), then click on <i>Check</i>. In Odoo 20, the access rights are declared in <code>security/ir.access.csv</code>: look at the lines already there.</p>
+        </field>
+    </record>
+</odoo>
